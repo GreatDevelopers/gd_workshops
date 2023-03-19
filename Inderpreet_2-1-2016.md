@@ -37,7 +37,7 @@ We work as a team on every project."
 TCC Website
 ===========
 
-###Static Site Generator: 
+### Static Site Generator: 
 Small script or a software that converts some input to HTML, CSS and JS that is readable by the browser.
 That some input can be any specific language like Markdown.
 

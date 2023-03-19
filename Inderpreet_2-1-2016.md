@@ -50,7 +50,7 @@ It has yml files.
 Loop example:
 
 ```sh
-{% for post in site.posts %}
+[Opening curly bracket percentage] for post in site.posts [percentage closing curly bracket]
 ```
 
 It's like a template.

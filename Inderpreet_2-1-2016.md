@@ -48,7 +48,11 @@ Performance, no database, fast.
 It has yml files.
 
 Loop example:
-`{% for post in site.posts %}`
+
+```sh
+{% for post in site.posts %}
+```
+
 It's like a template.
 
 We don't have to put template on the server. Jekyll converts the markdown and some template to HTML, CSS, JS.

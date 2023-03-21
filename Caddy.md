@@ -31,3 +31,23 @@ sys	0m0.015s
 sudo apt autoremove
 
 ```
+
+## Simplest configuration
+
+If your domain is hsrai.com, then following file named `Caddyfile`
+in folder `/etc/caddy` will server web-pages from folder `/var/www/html`.
+
+```sh
+hsrai.com {
+        # Set this path to your site's directory.
+        root * /var/www/html
+        # Enable the static file server.
+        file_server
+
+templates
+encode gzip
+
+try_files {path}.html {path}
+}
+```
+

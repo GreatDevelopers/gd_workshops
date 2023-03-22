@@ -53,9 +53,11 @@ repository named `website`, like
 cloned in the user `hsr`'s home folder, i.e. `/home/hsr`) under user named `hsr`, then
 ppend following to the content of already created file `/etc/caddy/Caddyfile`
 
-# Second web-site for rai.net
+## Second web-site for rai.net
 
 ```sh
+# Site 2: rai.net
+
 rai.net {
         # Set this path to your site's directory.
         root * /home/hsr/website/src

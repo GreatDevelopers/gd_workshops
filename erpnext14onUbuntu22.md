@@ -71,14 +71,13 @@ time sudo bash erpN2.sh
 sudo su - hsr
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.profile
+nvm install 16.15.0
 ```
 
 Put following content in a file named erpN3.sh
 
 ```sh
 # 3
-
-nvm install 16.15.0
 sudo apt-get install npm
 sudo npm install -g yarn
 

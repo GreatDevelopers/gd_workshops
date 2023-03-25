@@ -19,7 +19,7 @@ password="AxC23@#aXc"
 
 sudo adduser --gecos "" --disabled-password "$username"
 echo "${username}:${password}" | sudo chpasswd
-usermod -aG sudo "$username"
+sudo usermod -aG sudo "$username"
 
 sudo apt-get update && sudo apt-get -y upgrade
 

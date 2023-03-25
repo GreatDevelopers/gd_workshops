@@ -36,6 +36,8 @@ and issue command
 time sudo bash erpN1.sh
 ```
 
+Put following content in a file named erpN2.sh
+
 ```sh
 timedatectl set-timezone "Asia/Kolkata"
 
@@ -57,4 +59,10 @@ cat /etc/mysql/my.cnf mysqlSecure.txt > my.cnfNew
 sudo cp  my.cnfNew /etc/mysql/my.cnf
 
 sudo service mysql restart
+```
+
+and issue command
+
+```sh
+time sudo bash erpN2.sh
 ```

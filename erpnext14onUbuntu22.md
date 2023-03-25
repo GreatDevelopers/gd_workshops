@@ -66,3 +66,59 @@ and issue command
 ```sh
 time sudo bash erpN2.sh
 ```
+
+```sh
+sudo su - hsr
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.profile
+```
+
+Put following content in a file named erpN3.sh
+
+```sh
+# 3
+
+nvm install 16.15.0
+sudo apt-get install npm
+sudo npm install -g yarn
+
+# node --version
+
+sudo pip3 install frappe-bench
+
+# bench --version
+
+bench init --frappe-branch version-14 frappe-bench
+cd frappe-bench/
+chmod -R o+rx /home/hsr/
+bench new-site exp.gndec.ac.in
+bench get-app payments
+bench get-app --branch version-14 erpnext
+bench get-app hrms
+bench --site exp.gndec.ac.in install-app erpnext
+bench --site exp.gndec.ac.in install-app hrms
+bench --site exp.gndec.ac.in enable-scheduler
+bench --site exp.gndec.ac.in set-maintenance-mode off
+sudo bench setup production hsr
+bench config dns_multitenant on
+bench setup add-domain exp.gndec.ac.in --site exp.gndec.ac.in
+bench setup nginx
+sudo supervisorctl restart all
+# sudo bench setup production hsr
+sudo ufw allow 22,25,143,80,443,3306,3022,8000/tcp
+sudo ufw enable
+
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+sudo certbot --nginx
+```
+
+and issue command
+
+```sh
+time sudo bash erpN3.sh
+```

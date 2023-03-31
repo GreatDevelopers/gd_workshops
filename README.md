@@ -9,16 +9,3 @@ the level of knowledge, and to increase the work efficiency of the Group.
 1. [Tiki Wiki](https://github.com/GreatDevelopers/gd_workshops/raw/master/tikiwiki.pdf)  by [Harjot Kaur Mann](https://harjotmann.wordpress.com/).
 1. [Database in Wt](https://github.com/GreatDevelopers/gd_workshops/raw/master/wtdbo.pdf) by [Gauravjeet Singh](https://github.com/Gauravjeetsingh).
 
-## Test
-
-1. as
-1. sds
-
-## Links
-
-[1](asas)
-[wew](asas)
-
-(qw)[wewe]
-(asa)[assd]
-Footer

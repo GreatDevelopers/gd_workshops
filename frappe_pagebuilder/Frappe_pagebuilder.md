@@ -29,13 +29,19 @@
 
 - You can add more sections to your page by adding more rows in the Page Building Blocks table. The framework comes with a great set of Web Templates for you to create all sorts of pages.
 
+- Click on `Add Row` and select ` Section with Image`.
+
   ![Web-Page-with-another-section](./images/web-page-sectionwithimage.png)
+
+- After entering `Title` and `Subtitle`, click on `Attach`
 
   ![Web Page with another section - Preview](./images/sec_img_1.png)
 
+- click on `link` paste the image url and press submit and after save you can see on website.
+
   ![Web-Page-with-another-section2](./images/sec_img_2.png)
 
-  click on `link` pase the image url and press submit and after save you can see on website
+- Here is the preview:
 
   ![Web Page with another section - Preview](./images/another_section_preview.png)
 

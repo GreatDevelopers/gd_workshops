@@ -48,6 +48,5 @@ If you click to expand a row in the Page Building Blocks table, you have the fol
 - **Add Space on Bottom:** If checked, it will add a decent amount of space below the section.
 - **Add Gray Background:** If checked, it will add a gray background to the section.
 - **Hide Block:** If checked, it will hide the section block.
-- **CSS Class:** Add any CSS class and style it in the CSS field in the Style section.
 
   ![Section Options](./images/web_page_edit.png)

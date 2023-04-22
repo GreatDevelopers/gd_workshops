@@ -10,10 +10,10 @@ Home > Website > Web Site > Web Page
 
 ## 1. How to create a Web Page
 
-1.  Go to the Web Page list and click on New.
-2.  Enter a Title and add content in Main Section. The route will auto generated but you can change it.
-3.  Click on Save.
-4.  The web page will be published only when **Published** is ticked.
+1. Go to the Web Page list and click on New.
+2. Enter a Title and add content in Main Section. The route will auto generated but you can change it.
+3. Click on Save.
+4. The web page will be published only when **Published** is ticked.
 
 ![new-web-page](https://docs.erpnext.com/files/new-web-page.png)
 
@@ -23,20 +23,23 @@ View your Web Page by clicking on **See on Website** in the side bar.
 
 ### 1.1 Tips on making a good Web Page
 
-- Title
+- ### Title
+
   The first thing to set is the title of your page. The title has the maximum weight for search engines so choose a title that reflects the keywords that you are targeting for your audience. The route (URL) will be auto-generated from the title but you can change it.
 
-- Content
-  You can write your content in Rich Text, Markdown or HTML. If you want to make simple content pages, Rich Text and Markdown are great options.
+- ### Content
+
+  Content you can write your content in Markdown.
 
   **Learn markdown in a few minutes at** [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
 
-- Images
-  For Rich Text Content, you can directly embed images using the editor. For Markdown and HTML, you must attach the images to the document first. Now get the URL of your image by right-clicking on your attachment and copying the address.
+- ### Images
+
+  Images For Markdown, you must attach the images to the document first. Now get the URL of your image by right-clicking on your attachment and copying the address.
 
   ![get-image-link](https://docs.erpnext.com/files/get-image-link.png)
 
-  Now, add them to your Markdown or HTML using the appropriate syntax.
+  Now, add them to your Markdown using the appropriate syntax and keep syntax of md only, remove that of html.
 
   ```md
   <!-- markdown -->

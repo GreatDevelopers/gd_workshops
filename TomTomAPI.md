@@ -10,11 +10,11 @@
 ## All the reference videos that will help us to make our location based application
 
 1. Add a map to your website = [https://youtu.be/rqpZFsM7vII](https://youtu.be/rqpZFsM7vII) ~https://youtu.be/rqpZFsM7vII~
-2 Design Custom Maps with the TomTom Maps Styler = [https://www.youtube.com/watch?v=VJ8lpyJAVZ0&ab_channel=TomTom](https://www.youtube.com/watch?v=VJ8lpyJAVZ0&ab_channel=TomTom).
-3 Routing = [https://www.youtube.com/watch?v=lwoWKE1MqiU&ab_channel=TomTomDevelopers](https://www.youtube.com/watch?v=lwoWKE1MqiU&ab_channel=TomTomDevelopers).
-4 Geofencing API Tutorial with the TomTom Geofencing = [https://www.youtube.com/watch?v=1IVCzFPi0q0&list=PLl-bV-aob1-ffrfVCRWNBe5OwPWHlZxAd&index=6&ab_channel=TomTomDevelopers](https://www.youtube.com/watch?v=1IVCzFPi0q0&list=PLl-bV-aob1-ffrfVCRWNBe5OwPWHlZxAd&index=6&ab_channel=TomTomDevelopers).
-5 Custom Markers and Popups with the TomTom Maps APIs = [https://www.youtube.com/watch?v=rAZVd6XMAnQ&ab_channel=TomTomDevelopers](https://www.youtube.com/watch?v=rAZVd6XMAnQ&ab_channel=TomTomDevelopers).
-6 Navigation App Using the TomTom Nav SDK = [https://www.youtube.com/watch?v=raPYxWrqNjA&ab_channel=TomTomDevelopers](https://www.youtube.com/watch?v=raPYxWrqNjA&ab_channel=TomTomDevelopers).
+2 Design Custom Maps with the TomTom Maps Styler = [https://youtu.be/VJ8lpyJAVZ0](https://youtu.be/VJ8lpyJAVZ0).
+3 Routing = [https://youtu.be/lwoWKE1MqiU](https://youtu.be/lwoWKE1MqiU).
+4 Geofencing API Tutorial with the TomTom Geofencing = [https://youtu.be/1IVCzFPi0q0](https://youtu.be/1IVCzFPi0q0).
+5 Custom Markers and Popups with the TomTom Maps APIs = [https://youtu.be/rAZVd6XMAnQ](https://youtu.be/rAZVd6XMAnQ).
+6 Navigation App Using the TomTom Nav SDK = [https://youtu.be/raPYxWrqNjA](https://youtu.be/raPYxWrqNjA).
 
 
 # Traffic API:
@@ -23,6 +23,6 @@ Related to traffic. The Traffic API is service designed for developers to create
 1. Traffic incident Api = It give us event happening on road . As a service API, it can be used to fetch events in a bounded box(an area in a map). It is also used by SDK to display incidents.This provides an accurate view about traffic jams and incidents around a road network.
 2. Traffic flow API = this give how fast  or slow are street segments doing(eg = how traffic is going slow or fast) . This provides real time observed speeds and travel times for all key roads in a network.
 ## Using Tom Tom predict traffic flow:
-Step 1: Add map to website :Add a map to your website =[https://www.youtube.com/watch?v=rqpZFsM7vII&ab_channel=TomTom](https://www.youtube.com/watch?v=rqpZFsM7vII&ab_channel=TomTom).
-Step 2: Add traffic flow and incident layer to map. =[https://www.youtube.com/watch?v=OKwF-F7LJPw&ab_channel=TomTom](https://www.youtube.com/watch?v=OKwF-F7LJPw&ab_channel=TomTom).
+Step 1: Add map to website :Add a map to your website =[https://youtu.be/rqpZFsM7vII](https://youtu.be/rqpZFsM7vII).
+Step 2: Add traffic flow and incident layer to map. =[https://youtu.be/OKwF-F7LJPw](https://youtu.be/OKwF-F7LJPw).
 Adding more, we can make route app with tom tom.

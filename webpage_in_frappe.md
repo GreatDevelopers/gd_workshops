@@ -12,7 +12,7 @@
 
 - In Content Section, choose Content Type as Page Builder to use various templates.
   
-![imageA](imageA.png)
+![imageA](images/imageA.png)
 
 - Add rows in Page Building Blocks section, choose your desired web templates.
 

@@ -23,7 +23,7 @@
 ![imageB](frappe_pagebuilder/images/imageB.png)
   
 
-<br>
+
 # Various Web Templates
 
 ## Cover Image

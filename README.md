@@ -14,3 +14,4 @@ Workshop for GD Members by the GD Members is the idea to share the knowledge to 
 1. [Coin3D](../../raw/master/coin3d.pdf) by [Gauravjeet Singh](https://github.com/Gauravjeetsingh).
 1. [Database in Wt](../../raw/master/wtdbo.pdf) by [Gauravjeet Singh](https://github.com/Gauravjeetsingh).
 1. [Web-page in Frappe](webpage_in_frappe.md) by [Diya Baweja](https://github.com/Diya050/).
+1. [Working with Frappe](frappe_ui.md) by [Diya Baweja](https://github.com/Diya050/).

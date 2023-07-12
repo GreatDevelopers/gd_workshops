@@ -5,7 +5,8 @@ Frappe UI is a set of components and utilities to build frontend apps based on t
 Along with generic components which are required to build a frontend like Button, Link, Dialog, etc., frappe-ui also contains utilities for handling server-side data fetching, directives and utilities.
 
 In this tutorial, we will build a Fullstack Web-App, a ToDo app with Frappe Framework and Frappe UI. 
-![I8](Img/FWT/I8.png)
+
+![I8](https://github.com/Diya050/gd_workshops/assets/124448340/5bdeb7a8-1fd2-43fd-8799-95def6e34fb0)
 
 # The Backend Part
 
@@ -29,25 +30,27 @@ $ bench start
 - To create DocTypes in our app, we must log in to Desk. Go to http://todo.com:8000 and it should show you a login page. Enter Administrator as the user and password that you set while creating the site.
 - Create a doctype named `Action` in `ToDo` module and add fields as shown below:
 
-  ![I1](Img/FWT/I1.png)
-  
-  ![I2](Img/FWT/I2.png)
+  ![I1](https://github.com/Diya050/gd_workshops/assets/124448340/78d3dbcb-16dd-4663-a411-c774bf897fd9)
+
+
+  ![I2](https://github.com/Diya050/gd_workshops/assets/124448340/d5802769-4011-428e-9875-6fd87c70b9c4)
   
 - Create another doctype named `Category` in `ToDo` module and add fields as shown below:
 
-  ![I3](Img/FWT/I3.png)
+  ![I3](https://github.com/Diya050/gd_workshops/assets/124448340/36a9e361-9258-4ed7-8c2b-db06db173793)
 
-  ![I4](Img/FWT/I4.png)
+  ![I4](https://github.com/Diya050/gd_workshops/assets/124448340/df0dff34-19b8-4045-819b-293efad9643c)
 
 `Note:` Make the 'title' field unique.
 
 - Create another doctype named `Action Task` in `ToDo` module and add fields as shown below:
 
- ![I5](Img/FWT/I5.png)
+ ![I5](https://github.com/Diya050/gd_workshops/assets/124448340/d6f044be-1431-4899-972d-979f79759ce1)
+
 
 - Add two more rows in `Action` doctype:
 
- ![I6](Img/FWT/I6.png)
+![I6](https://github.com/Diya050/gd_workshops/assets/124448340/aab37b9f-46a5-4691-903f-f0202d4660f5)
 
 - Add categories like General, College, Artwork etc. and actions like Buying Groceries, Completing Assignments, Finishing a painting etc.
 - This completes the backend part.
@@ -68,8 +71,8 @@ $ cd frontend/
 $ yarn dev
 ```
 - Opening link http://localhost:8080/, doing login to our FrappeUI App and we'll see:
-
-![I7](Img/FWT/I7.png)   
+- 
+![I7](https://github.com/Diya050/gd_workshops/assets/124448340/f9c74628-320c-4fb9-978c-a5f7501cb323)
 
 - On clicking [click to send 'ping' request], we should get pong in response with "error": null. This ensures that our backend and frontend are connected.
 - Edit the code in todo/frontend/src/pages/Home.vue as:
@@ -340,5 +343,6 @@ let router = createRouter({
 export default router
 ```
 - Output:
-  ![I8](Img/FWT/I8.png)
+  
+![I8](https://github.com/Diya050/gd_workshops/assets/124448340/5bdeb7a8-1fd2-43fd-8799-95def6e34fb0)
 

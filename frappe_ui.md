@@ -6,6 +6,8 @@ Along with generic components which are required to build a frontend like Button
 
 In this tutorial, we will build a Fullstack Web-App, a ToDo app with Frappe Framework and Frappe UI.
 
+![I8](I8.png)
+
 # The Backend Part
 
 - Install frappe-bench by following: https://frappeframework.com/docs/v14/user/en/installation.
@@ -338,4 +340,6 @@ let router = createRouter({
 
 export default router
 ```
+- Output:
+  ![I8](I8.png)
 

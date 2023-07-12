@@ -4,9 +4,8 @@ Frappe UI is a set of components and utilities to build frontend apps based on t
 
 Along with generic components which are required to build a frontend like Button, Link, Dialog, etc., frappe-ui also contains utilities for handling server-side data fetching, directives and utilities.
 
-In this tutorial, we will build a Fullstack Web-App, a ToDo app with Frappe Framework and Frappe UI.
-
-![I8](I8.png)
+In this tutorial, we will build a Fullstack Web-App, a ToDo app with Frappe Framework and Frappe UI. 
+![I8](Img/FWT/I8.png)
 
 # The Backend Part
 
@@ -30,25 +29,25 @@ $ bench start
 - To create DocTypes in our app, we must log in to Desk. Go to http://todo.com:8000 and it should show you a login page. Enter Administrator as the user and password that you set while creating the site.
 - Create a doctype named `Action` in `ToDo` module and add fields as shown below:
 
-  ![I1](I1.png)
+  ![I1](Img/FWT/I1.png)
   
-  ![I2](I2.png)
+  ![I2](Img/FWT/I2.png)
   
 - Create another doctype named `Category` in `ToDo` module and add fields as shown below:
 
-  ![I3](I3.png)
+  ![I3](Img/FWT/I3.png)
 
-  ![I4](I4.png)
+  ![I4](Img/FWT/I4.png)
 
 `Note:` Make the 'title' field unique.
 
 - Create another doctype named `Action Task` in `ToDo` module and add fields as shown below:
 
- ![I5](I5.png)
+ ![I5](Img/FWT/I5.png)
 
 - Add two more rows in `Action` doctype:
 
- ![I6](I6.png)
+ ![I6](Img/FWT/I6.png)
 
 - Add categories like General, College, Artwork etc. and actions like Buying Groceries, Completing Assignments, Finishing a painting etc.
 - This completes the backend part.
@@ -70,7 +69,7 @@ $ yarn dev
 ```
 - Opening link http://localhost:8080/, doing login to our FrappeUI App and we'll see:
 
-![I7](I7.png)   
+![I7](Img/FWT/I7.png)   
 
 - On clicking [click to send 'ping' request], we should get pong in response with "error": null. This ensures that our backend and frontend are connected.
 - Edit the code in todo/frontend/src/pages/Home.vue as:
@@ -341,5 +340,5 @@ let router = createRouter({
 export default router
 ```
 - Output:
-  ![I8](I8.png)
+  ![I8](Img/FWT/I8.png)
 

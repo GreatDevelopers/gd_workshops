@@ -74,34 +74,62 @@ $ yarn dev
 - Edit the code in todo/frontend/src/pages/Home.vue as:
 ```vue
 <template>
-  <div class="mx-20">
+  <div class="mx-20"><br><br>
     <div class="flex flex-row items-center justify-between">
-      <h2 class="text-5xl font-black text-gray-900">Lists</h2>
-      <Button icon-left="plus">New List</Button>
+      <h1 class="text-7xl font-algerian text-gray-1500">Action List</h1>
+      
+      <Button icon-left="plus" @click="addActionDialogShown = true">New Action</Button>
     </div>
 
-    <div class="mt-2">
-      <Card title="General">
+    <div class="mt-2"><br>
+      <Card v-for="category in categories" :key="category.name" :title="category.name">
         <div>
+          <hr>
           <ul>
             <li
               class="flex flex-row space-y-2 items-center justify-between"
-              v-for="action in actions.data"
-              :key="action.title"
+              v-for="action in getCategoryActions(category.name)"
+              :key="action.name"
             >
               <router-link :to="`/actions/${action.name}`">
                 {{ action.title }}
               </router-link>
-              <Button @click="completeAction(action.name)" icon="check" />
+              <Button @click="toggleActionStatus(action)" :icon="getActionStatusIcon(action)" />
             </li>
           </ul>
-
-          <Button @click="addActionDialogShown = true" icon-left="plus"
-            >New Action</Button
-          >
         </div>
       </Card>
     </div>
+
+    <Dialog
+      :options="{
+        title: 'Add New Category',
+        actions: [
+          {
+            label: 'Add Category',
+            appearance: 'primary',
+            handler: ({ close }) => {
+              addCategory()
+              close() // closes dialog
+            },
+          },
+          { label: 'Cancel' },
+        ],
+      }"
+      v-model="addCategoryDialogShown"
+    >
+      <template #body-content>
+        <div class="space-y-2">
+          <Input
+            v-model="newCategory"
+            type="text"
+            required
+            placeholder="Enter the category name..."
+            label="Category Name"
+          />
+        </div>
+      </template>
+    </Dialog>
 
     <Dialog
       :options="{
@@ -126,14 +154,14 @@ $ yarn dev
             v-model="action.title"
             type="text"
             required
-            placeholder="Give your action a title..."
-            label="Title"
+            placeholder="Enter the action title..."
+            label="Action Title"
           />
           <Input
             v-model="action.category"
-            label="List"
             type="select"
             :options="categoryOptions"
+            label="Category"
           />
         </div>
       </template>
@@ -142,59 +170,72 @@ $ yarn dev
 </template>
 
 <script setup>
-import { Dialog, createListResource, Card, Input } from 'frappe-ui'
+import { Dialog, createListResource, Card, Input, Button } from 'frappe-ui'
 import { reactive, ref, computed } from 'vue'
 
 const action = reactive({
   title: '',
-  category: 'General',
+  category: '',
 })
+
+const addCategoryDialogShown = ref(false)
+const newCategory = ref('')
 
 const addActionDialogShown = ref(false)
 
 const actions = createListResource({
   doctype: 'Action',
-  fields: ['name', 'title', 'status', 'description', 'date', 'due_date'],
-  filters: {
-    status: 'ToDo',
-  },
+  fields: ['name', 'title', 'status', 'category'],
   limit: 100,
-
 })
 actions.reload()
 
-const categories = createListResource({
-  doctype: 'Category',
-  fields: ['name'],
-  transform(categories) {
-    return categories.map((c) => c.name)
-  },
-  cache: 'actions',
-})
-categories.reload()
-
-const categoryOptions = computed(() => {
-  if (categories.list.loading || !categories.data) {
+const categories = computed(() => {
+  if (actions.loading || !actions.data) {
     return []
   }
-  return categories.data
+  const uniqueCategories = [...new Set(actions.data.map((action) => action.category))]
+  return uniqueCategories.map((category) => ({ name: category }))
 })
 
-const completeAction = (actionName) => {
-  actions.setValue.submit({
-    name: actionName,
-    status: 'Completed',
-    onSuccess() {
-      actions.reload()
-    },
-  })
+const categoryOptions = computed(() => {
+  if (categories.value.length === 0) {
+    return []
+  }
+  return categories.value.map((category) => category.name)
+})
+
+const addCategory = () => {
+  const categoryName = newCategory.value.trim();
+  if (categoryName) {
+    const category = { name: categoryName };
+    categories.value.push(category);
+    newCategory.value = '';
+  }
 }
 
 const addAction = () => {
-  console.log(action)
   actions.insert.submit(action)
 }
+
+const toggleActionStatus = (action) => {
+  if (action.status === 'Available') {
+    action.status = 'Issued';
+  } else {
+    action.status = 'Available';
+  }
+  actions.update.submit(action);
+}
+
+const getActionStatusIcon = (action) => {
+  return action.status === 'Available' ? 'check' : 'undo';
+}
+
+const getCategoryActions = (categoryName) => {
+  return actions.data.filter((action) => action.category === categoryName);
+}
 </script>
+
 ```
 - Now create todo/frontend/src/pages/ActionDetails.vue as:
 ```vue

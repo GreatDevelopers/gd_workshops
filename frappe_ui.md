@@ -76,7 +76,7 @@ $ yarn dev
 
 - On clicking [click to send 'ping' request], we should get pong in response with "error": null. This ensures that our backend and frontend are connected.
 - Edit the code in todo/frontend/src/pages/Home.vue as:
-```vue
+```
 <template>
   <div class="mx-20"><br><br>
     <div class="flex flex-row items-center justify-between">
@@ -239,10 +239,11 @@ const getCategoryActions = (categoryName) => {
   return actions.data.filter((action) => action.category === categoryName);
 }
 </script>
+```
+
+- Now create todo/frontend/src/pages/ActionDetails.vue as:
 
 ```
-- Now create todo/frontend/src/pages/ActionDetails.vue as:
-```vue
 <template>
   <div class="mx-20 my-4" v-if="!action.get.loading">
     <div class="flex flex-row items-center justify-between">
@@ -299,7 +300,8 @@ action.reload()
 </script>
 ```
 - Also edit todo/frontend/src/main.js as:
-```js
+
+```
 import './index.css'
 
 import { createApp } from 'vue'
@@ -342,6 +344,7 @@ let router = createRouter({
 
 export default router
 ```
+
 - Output:
   
 ![I8](https://github.com/Diya050/gd_workshops/assets/124448340/5bdeb7a8-1fd2-43fd-8799-95def6e34fb0)

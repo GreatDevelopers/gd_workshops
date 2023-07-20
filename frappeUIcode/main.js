@@ -1,17 +1,28 @@
-import './index.css'
+// Import global styles
+import './index.css';
 
-import { createApp } from 'vue'
-import router from './router'
-import App from './App.vue'
+// Import Vue modules and components
+import { createApp } from 'vue';
+import router from './router';
+import App from './App.vue';
 
-import { Button, setConfig, frappeRequest, resourcesPlugin } from 'frappe-ui'
+// Import Frappe-UI components and utilities
+import { Button, setConfig, frappeRequest, resourcesPlugin } from 'frappe-ui';
 
-let app = createApp(App)
+// Create a Vue app instance
+let app = createApp(App);
 
-setConfig('resourceFetcher', frappeRequest)
+// Configure Frappe-UI to use the correct request method for resources
+setConfig('resourceFetcher', frappeRequest);
 
-app.use(router)
-app.use(resourcesPlugin)
+// Use Vue Router
+app.use(router);
 
-app.component('Button', Button)
-app.mount('#app')
+// Use the Frappe-UI resources plugin
+app.use(resourcesPlugin);
+
+// Register the Frappe-UI Button component globally
+app.component('Button', Button);
+
+// Mount the Vue app on the #app element
+app.mount('#app');

@@ -1,5 +1,8 @@
 <template>
+  <!-- Main container -->
   <div class="mx-20 my-4" v-if="!action.get.loading">
+
+    <!-- Page title and Go back/Delete/Mark As Done buttons -->
     <div class="flex flex-row items-center justify-between">
       <h1 class="font-black text-5xl text-gray-900">{{ action.doc.title }}</h1>
 
@@ -25,12 +28,12 @@
     </div>
 
     <div>
-      <!-- <TextEditor
+      <TextEditor
         editor-class="prose-sm border max-w-none rounded-b-lg p-3 overflow-auto h-64 focus:outline-none"
         :fixedMenu="true"
         :content="content"
         @change="(val) => (content = val)"
-      /> -->
+      />
     </div>
   </div>
   <LoadingIndicator v-else class="w-6 text-blue-500" />

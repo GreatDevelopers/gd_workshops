@@ -13,6 +13,7 @@ Workshop for GD Members by the GD Members is the idea to share the knowledge to 
 1. [Hackathon Win](Inderpreet_2-1-2016.md) by [Mandeep Singh](https://github.com/mandeeps708).
 1. [Coin3D](../../raw/master/coin3d.pdf) by [Gauravjeet Singh](https://github.com/Gauravjeetsingh).
 1. [Database in Wt](../../raw/master/wtdbo.pdf) by [Gauravjeet Singh](https://github.com/Gauravjeetsingh).
+1. [Webpages in frappe](https://harleen1kaurh.github.io/SDC/webtut) by [Harleen Kaur Hans](https://github.com/Harleen1kaurH).
 1. [Web-page in Frappe](webpage_in_frappe.md) by [Diya Baweja](https://github.com/Diya050/).
 1. [Working with Frappe UI](frappe_ui.md) by [Diya Baweja](https://github.com/Diya050/).
 2.  [Frappe Tutorial](tutorialfrappe.md) by [Jaspinder Kaur Walia](https://github.com/JaspinderKaurWalia26).

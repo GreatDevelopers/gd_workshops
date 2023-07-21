@@ -1,28 +1,63 @@
-// Import global styles
-import './index.css';
+import './index.css'
 
-// Import Vue modules and components
-import { createApp } from 'vue';
-import router from './router';
-import App from './App.vue';
+import { createApp } from 'vue'
+import router from './router'
+import App from './App.vue'
 
-// Import Frappe-UI components and utilities
-import { Button, setConfig, frappeRequest, resourcesPlugin } from 'frappe-ui';
+import {
+  Button,
+  Card,
+  Input,
+  setConfig,
+  frappeRequest,
+  resourcesPlugin,
+} from 'frappe-ui'
 
-// Create a Vue app instance
-let app = createApp(App);
+let app = createApp(App)
 
-// Configure Frappe-UI to use the correct request method for resources
-setConfig('resourceFetcher', frappeRequest);
+setConfig('resourceFetcher', frappeRequest)
 
-// Use Vue Router
-app.use(router);
+app.use(router)
+app.use(resourcesPlugin)
 
-// Use the Frappe-UI resources plugin
-app.use(resourcesPlugin);
+app.component('Button', Button)
+app.component('Card', Card)
+app.component('Input', Input)
 
-// Register the Frappe-UI Button component globally
-app.component('Button', Button);
+app.mount('#app')// Import CSS styles from the 'index.css' file.
+import './index.css'
 
-// Mount the Vue app on the #app element
-app.mount('#app');
+// Import required modules from Vue, router, and App.vue.
+import { createApp } from 'vue'
+import router from './router'
+import App from './App.vue'
+
+// Import components and utilities from the 'frappe-ui' library.
+import {
+  Button,
+  Card,
+  Input,
+  setConfig,
+  frappeRequest,
+  resourcesPlugin,
+} from 'frappe-ui'
+
+// Create a new Vue app instance.
+let app = createApp(App)
+
+// Set the resourceFetcher to frappeRequest, a configuration for the frappe-ui library.
+setConfig('resourceFetcher', frappeRequest)
+
+// Use the Vue router for navigation.
+app.use(router)
+
+// Use the resourcesPlugin from frappe-ui for handling resources.
+app.use(resourcesPlugin)
+
+// Register global components to be used throughout the app.
+app.component('Button', Button) // Register 'Button' component.
+app.component('Card', Card)     // Register 'Card' component.
+app.component('Input', Input)   // Register 'Input' component.
+
+// Mount the Vue app to the element with the ID 'app'.
+app.mount('#app')

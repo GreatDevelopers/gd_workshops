@@ -1,0 +1,28 @@
+<--meeting_invitation.html--/>
+
+<p>
+    <!-- Display the sender's name in a label with a default style -->
+    <span class="label label-default"> {{ sender }}</span> Inviting you for a Meeting
+</p>
+
+<blockquote
+    style="border-left: 3px solid #d1d8dd; padding: 7px 15px; margin-left: 0px;">
+    <!-- Display the meeting date and time in a blockquote with a left border -->
+    Date: {{ date.strftime('%d %B %Y') }} <br>
+    From: {{ from_time }}
+    To: {{ to_time  }}
+</blockquote>
+
+{% if invitation_message %}
+    <!-- Display the invitation message if available -->
+    <h3>Invitation Message</h3>
+    <p>{{ invitation_message or '' }}</p>
+{% endif %}
+
+{% if agenda %}
+    <!-- Display the meeting agenda if available -->
+    <h4>Meeting Agenda</h4>
+    {% for each in agenda %}
+        <li>{{ each.description }}</li>
+    {% endfor %}
+{% endif %}

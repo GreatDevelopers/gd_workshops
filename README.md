@@ -17,3 +17,4 @@ Workshop for GD Members by the GD Members is the idea to share the knowledge to 
 1. [Web-page in Frappe](webpage_in_frappe.md) by [Diya Baweja](https://github.com/Diya050/).
 1. [Working with Frappe UI](frappe_ui.md) by [Diya Baweja](https://github.com/Diya050/).
 2.  [Frappe Tutorial](tutorialfrappe.md) by [Jaspinder Kaur Walia](https://github.com/JaspinderKaurWalia26).
+1. [Meeting App](meeting_app_tutorial) by [Diya Baweja](https://github.com/Diya050/). 

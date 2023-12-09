@@ -17,3 +17,5 @@ Workshop for GD Members by the GD Members is the idea to share the knowledge to 
 1. [Web-page in Frappe](webpage_in_frappe.md) by [Diya Baweja](https://github.com/Diya050/).
 1. [Working with Frappe UI](frappe_ui.md) by [Diya Baweja](https://github.com/Diya050/).
 2.  [Frappe Tutorial](tutorialfrappe.md) by [Jaspinder Kaur Walia](https://github.com/JaspinderKaurWalia26).
+1. [Frappe Version 15 install](frappeinstall15.md) by [Baljit Singh ](https://github.com/Baljit998).
+

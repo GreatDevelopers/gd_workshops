@@ -1,0 +1,81 @@
+{% extends "templates/web.html" %}
+
+{% block content %}
+<!-- Start of main content section -->
+
+<div class="py-1 row">
+	<pre>    </pre>
+	<h2>{{ title }}</h2>
+</div>
+
+<div class="row">
+	<pre>    </pre>
+	<ul class="list-unstyled">
+		<br>
+		<!-- Displaying the date of the document -->
+		<li>
+			<label>Date:</label> {{ doc.get_formatted("date") }}
+		</li>
+		<!-- Displaying the time range of the document -->
+		<li>
+			<label>Time:</label> {{ doc.get_formatted("from_time") }} to {{ doc.get_formatted("to_time") }}
+		</li>
+		<!-- Displaying the status of the document -->
+		<li>
+			<label>Status: </label> {{ doc.status }}
+		</li>
+	</ul>
+</div>
+
+<div class="col">
+	<!-- Displaying status badges based on the value of 'status' -->
+	{%- if status == 'Completed' -%}
+	<span class="badge badge-success">Completed</span>
+	{%- elif status == 'Planned' -%}
+	<span class="badge badge-primary">Planned</span>
+	{%- elif status == 'Invitation Sent' -%}
+	<span class="badge badge-primary">Invitation Sent</span>
+	{%- elif status == 'In Progress' -%}
+	<span class="badge badge-primary">In Progress</span>
+	{%- elif status == 'Cancelled' -%}
+	<span class="badge badge-primary">Cancelled</span>
+	{%- endif -%}
+</div>
+
+<div class="col">
+	<pre>    </pre>
+	<hr>
+	<h2>Agenda:</h2>
+	<ul>
+		{% for agenda in doc.agenda %}
+		<!-- Displaying each agenda item -->
+		<li>
+			{{ agenda.description }}
+		</li>
+		{% endfor %}
+	</ul>
+
+	<hr>
+	<h2>Attendees:</h2>
+	<ul>
+		{% for attendee in doc.attendees %}
+		<!-- Displaying each attendee with an optional accepted icon if they accepted the invitation -->
+		<li>
+			{{ attendee.full_name }} {% if attendee.accepted %} <i class="icon icon-ok"></i> {% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+
+	<hr>
+	<h2>Minutes:</h2>
+	<ul>
+		{% for minute in doc.minutes %}
+		<!-- Displaying each minute item -->
+		<li>
+			{{ minute.description }}
+		</li>
+		{% endfor %}
+	</ul>
+
+<!-- End of main content section -->
+{% endblock %}

@@ -1,0 +1,38 @@
+<--meetings.html--/>
+
+{% macro render_meetings(meetings) %}
+    <!-- Macro to render a list of meetings -->
+    {% if meetings %}
+
+    <ul class="list-unstyled meetings-list">
+        {% for meeting in meetings %}
+        <a href="/meetings/{{ meeting.page_name }}">
+            <!-- Create a hyperlink to the individual meeting page -->
+            <li>
+                {{ meeting.title }}<br>
+                <!-- Display the meeting title and formatted date with from_time and to_time -->
+                <span class="text-muted">{{ frappe.format_date(meeting.date) }}: {{ meeting.from_time }} to {{ meeting.to_time }}</span>
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+
+    <!-- If there are no meetings, display a message -->
+    <p class="text-muted">No meetings listed</p>
+
+    {% endif %}
+{% endmacro %}
+
+<h2>Planned Meetings</h2>
+
+{{ render_meetings(planned_meetings) }}
+<!-- Call the 'render_meetings' macro to render the planned meetings -->
+
+<hr>
+
+<h2>Past Meetings</h2>
+
+{{ render_meetings(past_meetings) }}
+<!-- Call the 'render_meetings' macro to render the past meetings -->

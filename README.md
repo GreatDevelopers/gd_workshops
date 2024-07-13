@@ -1,6 +1,6 @@
 Workshop for GD Members by the GD Members is the idea to share the knowledge to increase the level of knowledge, and to increase the work efficiency of the Group.
 
-1. [Saerch in databse](SQL.md) by [H S Rai](https://github.com/hsrai).
+1. [Search in databse](SQL.md) by [H S Rai](https://github.com/hsrai).
 1. [Create Frappe DocType with web page](FrappeDoc.md) by [H S Rai](https://github.com/hsrai).
 1. [TomTom Map API](TomTomAPI.md) by [Ridhamjeet Kaur](https://github.com/ridhamjeetkaur).
 1. [Time Management with Markdown](TimeManagement.md) by [H S Rai](https://github.com/hsrai).

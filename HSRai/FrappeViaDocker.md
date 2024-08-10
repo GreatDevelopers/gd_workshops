@@ -224,49 +224,50 @@ It's output is:
 ✅ Workers compose not present. Generating...
 ✅ Saved bench config.
 ✅ Bench site is active and responding.
+
 ┌───────────────────┬──────────────────────────────────────────────┐
-│ Bench Url     	│ http://hsr.com                           	│
+│ Bench Url         │ http://hsr.com                               │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Bench Root    	│ /home/ced/frappe/sites/hsr.com           	│
+│ Bench Root        │ /home/ced/frappe/sites/hsr.com               │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Frappe Username   │ administrator                            	│
+│ Frappe Username   │ administrator                                │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Frappe Password   │ S3Kre                                    	│
+│ Frappe Password   │ S3Kre                                        │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Root DB User  	│ root                                     	│
+│ Root DB User      │ root                                         │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Root DB Password  │ 7@cOI!S@e?@+_rt!f---+XD+4w3-6_Zs         	│
+│ Root DB Password  │ 7@cOI!S@e?@+_rt!f---+XD+4w3-6_Zs             │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Root DB Host  	│ global-db                                	│
+│ Root DB Host      │ global-db                                    │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ DB Name       	│ hsr-com                                  	│
+│ DB Name           │ hsr-com                                      │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ DB User       	│ hsr-com                                  	│
+│ DB User           │ hsr-com                                      │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ DB Password   	│ uEKz9DOxSvGdjfk6                         	│
+│ DB Password       │ uEKz9DOxSvGdjfk6                             │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Environment   	│ dev                                      	│
+│ Environment       │ dev                                          │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ HTTPS         	│ Not Enabled                              	│
+│ HTTPS             │ Not Enabled                                  │     
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Admin Tools   	│ Tool    	┃ URL                        	│
-│               	│ ━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ │
-│               	│ Mailhog 	│ http://hsr.com/mailhog     	│
-│               	│ ────────────┼─────────────────────────────── │
-│               	│ Adminer 	│ http://hsr.com/adminer     	│
+│ Admin Tools       │ Tool     ┃ URL                               │
+│                   │ ━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ │
+│                   │ Mailhog  │ http://hsr.com/mailhog            │
+│                   │ ────────────┼─────────────────────────────── │
+│                   │ Adminer  │ http://hsr.com/adminer            │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Bench Apps    	│ App              	┃ Version           	│
-│               	│ ━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━ │
-│               	│ frappe           	│ 15.37.0           	│
+│ Bench Apps        │ App               ┃ Version                  │
+│                   │ ━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━ │
+│                   │ frappe            │ 15.37.0                  │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Bench Services	│  frappe        	✓	nginx         	✓  │
-│               	│  redis-cache   	✓	redis-queue   	✓  │
-│               	│  redis-socketio	✓	schedule      	✓  │
-│               	│  socketio      	✓                     	│
+│ Bench Services    │  frappe         ✓          nginx          ✓  │
+│                   │  redis-cache    ✓          redis-queue    ✓  │
+│                   │  redis-socketio ✓          schedule       ✓  │
+│                   │  socketio       ✓                            │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Bench Workers 	│  long-worker   	✓	short-worker  	✓  │
+│ Bench Workers     │  long-worker    ✓          short-worker   ✓  │
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Bench Admin Tools │  adminer       	✓	mailhog       	✓  │
+│ Bench Admin Tools │  adminer        ✓          mailhog        ✓  │
 └───────────────────┴──────────────────────────────────────────────┘
 ✅ Please note that You will have to add a host entry to your system's hosts file to access the bench locally.
 
@@ -275,11 +276,13 @@ user    0m27.123s
 sys    0m22.283s
 ```
 
+Add ```27.0.0.1    hsr.com``` in file ```/etc/hosts```
 
-$ cat /etc/hosts
+to make this file look like (a part of file):
+
+```sh
 127.0.0.1    localhost
 127.0.0.1    hsr.com
-
-// As last line, as above
-
 ```
+
+New line added is the last line as per above.

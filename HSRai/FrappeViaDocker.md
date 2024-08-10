@@ -16,6 +16,33 @@ Python 3.11.2
 
 Python version >  3.11, so Ok
 
+### Install sudo
+
+```sh
+su -
+Enter password
+
+You become root, $ prompt will change to #
+
+apt update -y
+apt install sudo -y
+visudo
+```
+Locate following
+
+```sh
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+```
+
+and make it by adding a line, in case your username is hsrai (replace hsrai with your username)
+
+```sh
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+hsrai   ALL=(ALL:ALL) ALL
+```
+
 ### Install Docker:
 
 Ref: https://docs.docker.com/engine/install/debian/

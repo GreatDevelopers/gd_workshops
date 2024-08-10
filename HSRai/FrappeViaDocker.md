@@ -28,7 +28,7 @@ apt update -y
 apt install sudo -y
 visudo
 ```
-Locate following
+Locate the following
 
 ```sh
 # User privilege specification
@@ -43,18 +43,17 @@ root    ALL=(ALL:ALL) ALL
 hsrai   ALL=(ALL:ALL) ALL
 ```
 
+Open file ``` ~/.bashrc``` in any editor, and add following at the end of file
+
+```export PATH=$PATH:/home/ced/.local/bin```
+
 ### Install Docker:
 
 Ref: https://docs.docker.com/engine/install/debian/
 
+Put following in frappeInstall01.sh file:
+
 ```sh
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-
-You will get not installed, so not removed
-
-Put following in doc.sh file:
-
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -64,45 +63,62 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 # Add the repository to Apt sources:
 
-```sh
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
 
-// tets
+Issue the command:
 
-sudo docker run hello-world
+```bash frappeInstall01.sh```
 
+Add user to usergroup `docker`
+
+```sudo usermod -aG docker hsrai```
+
+Exit from current yerminal, by ```ctrl + d```
+
+Open the terminal again by ```ctrl + alt + t```
+
+Check docker installation:
+
+```sh
+docker --version
+```
+If you see somethig like ```Docker version 27.1.1, build 6312585```, then all good.
+
+Issue command:
+
+```docker run hello-world```
+
+If message indicate that docker installtion is successful then proceed furthrt.
+
+Create a file ```frappeInstall02.sh``` with content:
+
+```sh
 sudo apt install python3-pip -y
 pip install frappe-manager --break-system-packages
 fm --install-completion
+```
+Save fie and close the editor. Issue the command:
 
-nano /home/ced/.bashrc
+```sh
+bash frappeInstall02.sh
+```
 
-Add following at the end of file
+Close the terminal and open the new one.
 
-export PATH=$PATH:/home/ced/.local/bin
+To create website with URL hsr.com (give any name of your choice):
 
-
-Save and exit.
-
-Exit
-Open terminal again
-
-docker --version
-Docker version 27.1.1, build 6312585
-
-
-
+```sh
 time fm create hsr.com
-// hsr.com is website’s address.
+```
+It's output will be:
 
-
-
-ced@deb12:~$ time fm create hsr.com
+```sh
 🔄 Pending Migrations...
 📦 v0.9.0
 📦 v0.10.0
@@ -156,12 +172,15 @@ required images using command 'fm self update images'.
 real    7m34.764s
 user    0m6.315s
 sys    0m1.555s
-ced@deb12:~$ time fm self update images
+```
 
-////
+If no such error occured, then skip the next 2 commands:
 
-ced@deb12:~$ time fm self update images==^C
-ced@deb12:~$ time fm self update images
+```time fm self update images```
+
+It's output is:
+
+```
 ✅ Pulled ghcr.io/rtcamp/frappe-manager-frappe:v0.15.0.
 ✅ Pulled ghcr.io/rtcamp/frappe-manager-nginx:v0.15.0.
 ✅ Pulled redis:6.2-alpine.
@@ -173,7 +192,15 @@ ced@deb12:~$ time fm self update images
 real	4m41.825s
 user	0m5.437s
 sys 	0m0.628s
-ced@deb12:~$ time fm create hsr.com
+```
+Issue command:
+
+```sh
+time fm create hsr.com
+```
+It's output is:
+
+```sh
 ✅ Created all required directories.
 ✅ Started bench services.
 ✅ Configured common_site_config.json
@@ -204,7 +231,7 @@ ced@deb12:~$ time fm create hsr.com
 ├───────────────────┼──────────────────────────────────────────────┤
 │ Frappe Username   │ administrator                            	│
 ├───────────────────┼──────────────────────────────────────────────┤
-│ Frappe Password   │ admin                                    	│
+│ Frappe Password   │ S3Kre                                    	│
 ├───────────────────┼──────────────────────────────────────────────┤
 │ Root DB User  	│ root                                     	│
 ├───────────────────┼──────────────────────────────────────────────┤
@@ -246,7 +273,7 @@ ced@deb12:~$ time fm create hsr.com
 real    7m52.632s
 user    0m27.123s
 sys    0m22.283s
-ced@deb12:~$
+```
 
 
 $ cat /etc/hosts

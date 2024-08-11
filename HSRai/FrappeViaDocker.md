@@ -43,6 +43,16 @@ root    ALL=(ALL:ALL) ALL
 hsrai   ALL=(ALL:ALL) ALL
 ```
 
+Save file and exit the editor.
+
+Type again `exit` on `#` prompt to move from `root` to normal user, in my case `ced`
+
+```sh
+root@deb12:~# exit
+ced@deb12:~$ 
+```
+You should see your <UserName> and `$` prompt.
+
 Open file ``` ~/.bashrc``` in any editor, and add following at the end of file
 
 ```export PATH=$PATH:/home/ced/.local/bin```

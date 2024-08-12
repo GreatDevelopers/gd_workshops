@@ -62,7 +62,7 @@ Put following in frappeInstall01.sh file:
 ```sh
 # Add Docker's official GPG key:
 sudo apt-get update
-sudo apt-get install ca-certificates curl
+sudo apt-get install ca-certificates curl -y
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -74,7 +74,7 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
 Issue the command:
@@ -83,11 +83,11 @@ Issue the command:
 
 Add user to usergroup `docker`
 
-```sudo usermod -aG docker hsrai```
-
-Exit from current yerminal, by ```ctrl + d```
-
-Open the terminal again by ```ctrl + alt + t```
+```sh
+sudo usermod -aG docker ced
+sudo reboot
+```
+Open the terminal again by typing `ter` search bar, and selecting `Terminal` icon. 
 
 Check docker installation:
 
@@ -100,7 +100,39 @@ Issue command:
 
 ```docker run hello-world```
 
-If message indicate that docker installtion is successful then proceed furthrt.
+If message indicate that docker installtion is successful (as given below) then proceed further.
+
+```sh
+docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c1ec31eb5944: Pull complete 
+Digest: sha256:1408fec50309afee38f3535383f5b09419e6dc0925bc69891e79d84cc4cdcec6
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+ced@deb12:~$ 
+```
 
 Create a file ```frappeInstall02.sh``` with content:
 

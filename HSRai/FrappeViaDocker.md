@@ -16,16 +16,12 @@ Python 3.11.2
 
 Python version >  3.11, so Ok
 
-### Install sudo
-
 ```sh
 su -
 Enter password
 
 You become root, $ prompt will change to #
 
-apt update -y
-apt install sudo -y
 visudo
 ```
 Locate the following
@@ -35,12 +31,12 @@ Locate the following
 root    ALL=(ALL:ALL) ALL
 ```
 
-and make it by adding a line, in case your username is hsrai (replace hsrai with your username)
+and make it by adding a line, in case your username is ced (replace ced with your username)
 
 ```sh
 # User privilege specification
 root    ALL=(ALL:ALL) ALL
-hsrai   ALL=(ALL:ALL) ALL
+ced     ALL=(ALL:ALL) ALL
 ```
 
 Save file and exit the editor.

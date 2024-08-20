@@ -1,5 +1,7 @@
 Workshop for GD Members by the GD Members is the idea to share the knowledge to increase the level of knowledge, and to increase the work efficiency of the Group.
 
+1. [Live report](https://docs.google.com/document/d/19yR6Kiyx-Sx6syBRTXxcVdBbZOBqbuFkM61YkpSBqww/edit?usp=sharing) by [H S Rai](https://github.com/hsrai).
+1. [Frappe via Docker](HSRai/FrappeViaDocker) by [H S Rai](https://github.com/hsrai).
 1. [Search in databse](SQL.md) by [H S Rai](https://github.com/hsrai).
 1. [Create Frappe DocType with web page](FrappeDoc.md) by [H S Rai](https://github.com/hsrai).
 1. [TomTom Map API](TomTomAPI.md) by [Ridhamjeet Kaur](https://github.com/ridhamjeetkaur).

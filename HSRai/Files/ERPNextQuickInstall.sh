@@ -45,13 +45,13 @@ check_os() {
         fi
     done
 
-    if [[ "$os_supported" = false ]] || [[ "$version_supported" = false ]]; then
-        echo -e "${RED}This script is not compatible with your operating system or its version.${NC}"
-        exit 1
-    fi
+#    if [[ "$os_supported" = false ]] || [[ "$version_supported" = false ]]; then
+#        echo -e "${RED}This script is not compatible with your operating system or its version.${NC}"
+#        exit 1
+#    fi
 }
 
-check_os
+# check_os // by HS Rai
 
 # Detect the platform (similar to $OSTYPE)
 OS="`uname`"
@@ -142,34 +142,6 @@ else
 fi
 sleep 2
 
-# Check OS compatibility for Version 15
-if [[ "$bench_version" == "version-15" ]]; then
-    if [[ "$(lsb_release -si)" != "Ubuntu" && "$(lsb_release -si)" != "Debian" ]]; then
-        echo -e "${RED}Your Distro is not supported for Version 15.${NC}"
-        exit 1
-    elif [[ "$(lsb_release -si)" == "Ubuntu" && "$(lsb_release -rs)" < "22.04" ]]; then
-        echo -e "${RED}Your Ubuntu version is below the minimum version required to support Version 15.${NC}"
-        exit 1
-    elif [[ "$(lsb_release -si)" == "Debian" && "$(lsb_release -rs)" < "12" ]]; then
-        echo -e "${RED}Your Debian version is below the minimum version required to support Version 15.${NC}"
-        exit 1
-    fi
-fi
-if [[ "$bench_version" != "version-15" ]]; then
-    if [[ "$(lsb_release -si)" != "Ubuntu" && "$(lsb_release -si)" != "Debian" ]]; then
-        echo -e "${RED}Your Distro is not supported for Version 15.${NC}"
-        exit 1
-    elif [[ "$(lsb_release -si)" == "Ubuntu" && "$(lsb_release -rs)" > "22.04" ]]; then
-        echo -e "${RED}Your Ubuntu version is not supported for $version_choice.${NC}"
-        exit 1
-    elif [[ "$(lsb_release -si)" == "Debian" && "$(lsb_release -rs)" > "11" ]]; then
-        echo -e "${RED}Your Debian version is below the minimum version required to support Version 15.${NC}"
-        exit 1
-    fi
-fi
-
-# Check OS and version compatibility for all versions
-check_os
 
 # First Let's take you home
 cd $(sudo -u $USER echo $HOME)
@@ -259,6 +231,10 @@ echo -e "${YELLOW}Now installing MariaDB and other necessary packages...${NC}"
 sleep 2
 sudo apt install mariadb-server mariadb-client -y
 echo -e "${GREEN}MariaDB and other packages have been installed successfully.${NC}"
+
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+
 sleep 2
 
 # Use a hidden marker file to determine if this section of the script has run before.

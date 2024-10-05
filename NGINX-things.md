@@ -38,7 +38,7 @@ Now open on browser to see default welcome page for nginx server by:
 ### Step 2:
 #### Open your Nginx configuration file
 * sudo nano /etc/nginx/sites-available/default or sudo nano /etc/nginx/nginx.conf
-#### Update the congiguration file in server block
+#### Update the configuration file in server block
 
     error_page 403 /error-pages/403.html;
     error_page 404 /error-pages/404.html;

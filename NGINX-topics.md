@@ -65,3 +65,58 @@ Now open on browser to see default welcome page for nginx server by:
 
 ### 404 Not Found error
 ![Screenshot from 2024-10-05 01-49-05](https://github.com/user-attachments/assets/b1c7ac16-aa1d-4dac-8e25-94e1620194ea)
+
+************************************************
+## Create Multiple Users
+### Step 1:
+#### Open Terminal
+* create shell scripting file
+* Folder name create_user.sh
+  #!/bin/bash
+
+      if [ -z "$1" ]; then
+      echo "Please provide a username."
+      exit 1
+      fi
+
+         USERNAME=$1
+        USERDIR="/home/$USERNAME/www"
+
+        sudo useradd -m $USERNAME
+
+        sudo mkdir -p $USERDIR
+
+          sudo chown -R $USERNAME:$USERNAME /home/$USERNAME
+
+        echo "Welcome to $USERNAME's website" | sudo tee $USERDIR/index.html
+
+        sudo chmod -R 755 /home/$USERNAME
+
+        echo "User $USERNAME created with default website folder and index.html file."
+### Step 2:
+#### Open Configuration file and write in server block
+     location ~^/~([a-zA-Z0-9_-]+)(.*) 
+     {
+        alias /home/$1/www$2;
+        
+        index index.html index.htm;
+        
+        autoindex on;
+        
+        fancyindex on;  
+        
+        fancyindex_css_href "/fancyindex.css";    
+     }
+
+### Step 3:
+* ./create_user stephen
+
+### Step 4:
+* ls /home
+### Step 5:
+write google.ldh.in/~stephen on browser
+
+![Screenshot from 2024-10-15 17-52-58](https://github.com/user-attachments/assets/327afa57-f813-482f-a085-edbd53515d78)
+
+# PPT of NGINX Topics
+https://nginx-ppt.netlify.app/

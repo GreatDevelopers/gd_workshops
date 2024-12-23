@@ -12,10 +12,16 @@ bench get-app $URL_OF_THIS_REPO --branch develop
 bench install-app books_management
 bench --site books_management migrate #to ensure the database is set up correctly
 ```
+### Bench running
+```bash
+cd $PATH_TO_YOUR_BENCH
+bench start #run
+```
 ### Books Management app uses Vuejs for frontend:
 ```bash
 cd apps/books_management/books_management/www/
 npm install #run
+npm run dev # to start the application
 ```
 
 ### Contributing

@@ -10,6 +10,12 @@ You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 cd $PATH_TO_YOUR_BENCH
 bench get-app $URL_OF_THIS_REPO --branch develop
 bench install-app books_management
+bench --site books_management migrate #to ensure the database is set up correctly
+```
+### Books Management app uses Vuejs for frontend:
+```bash
+cd apps/books_management/books_management/www/
+npm install #run
 ```
 
 ### Contributing

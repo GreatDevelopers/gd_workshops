@@ -1,0 +1,1 @@
+.book-card{border:1px solid #ccc;padding:15px;margin:10px;border-radius:5px;background-color:#f9f9f9;box-shadow:0 2px 4px #0000001a}.book-card img{max-width:150px;height:auto;border-radius:4px;margin-top:10px}.text-green-600{color:green}.text-red-600{color:red}@tailwind base;@tailwind components;@tailwind utilities;

@@ -1,4 +1,5 @@
 <template>
+  <h2 class="title">Books</h2>
   <div class="container-books">
     <div class="search-container">
       <input
@@ -10,8 +11,14 @@
     </div>
 
     <button v-if="isLibrarian" class="add-btn-toggle" @click="toggleForm">
-      {{ showForm ? "+Add Book" : "+Add Book" }}
+      {{ showForm ? "Close Form" : "+Add Book" }}
     </button>
+
+     <div class="latest-btn-direction">
+       <button class="latest-books-btn" @click="toggleLatestBooksModal">
+         Show Latest Books
+        </button>
+      </div>
 
     <div class="book-list">
       <div v-if="showForm" class="modal-overlay" @click.self="toggleForm">
@@ -25,7 +32,7 @@
         v-for="book in paginatedBooks"
         :key="book.name"
         class="book-card"
-        @click="navigateToBookDetails(book.name)" 
+        @click="navigateToBookDetails(book.name)"
       >
         <img :src="book.image" alt="Book Image" v-if="book.image" />
         <div>
@@ -46,6 +53,22 @@
       </div>
     </div>
   </div>
+
+  <div v-if="showLatestBooksModal" class="modal-overlay" @click.self="toggleLatestBooksModal">
+    <div class="modal-content">
+      <button class="close-button" @click="toggleLatestBooksModal">✖</button>
+      <h3 class="btn-latest">Latest Books</h3>
+      <ol class="latest-list-ol">
+        <li v-for="book in latestBooks" :key="book.name">
+          <img :src="book.image" alt="Book Image" v-if="book.image" class="latest-cover-book"/>
+          <div class="latest-content">
+            <strong>{{ book.name }}</strong> <br> by {{ book.author || "Unknown" }}
+          </div>
+          
+        </li>
+      </ol>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -60,10 +83,12 @@ export default {
   data() {
     return {
       books: [],
-      searchQuery: "", 
+      searchQuery: "",
       showForm: false,
-      displayedBooksCount: 10, 
-      isLibrarian: false, 
+      displayedBooksCount: 10,
+      isLibrarian: false,
+      showLatestBooksModal: false,
+      latestBooks: [], 
     };
   },
   computed: {
@@ -85,8 +110,11 @@ export default {
   },
   mounted() {
     this.fetchBooks();
-    this.checkIfLibrarian(); 
+    this.checkIfLibrarian();
   },
+  created() {
+  this.checkIfLibrarian();
+},
   methods: {
     async fetchBooks() {
       try {
@@ -114,29 +142,63 @@ export default {
       this.showForm = !this.showForm;
     },
     handleBookAdded() {
-      this.fetchBooks(); 
-      this.toggleForm(); 
+      this.fetchBooks();
+      this.toggleForm();
     },
     navigateToBookDetails(bookId) {
-      this.$router.push(`/book/${bookId}`); 
+      this.$router.push(`/book/${bookId}`);
     },
     loadMoreBooks() {
-      this.displayedBooksCount += 10; 
+      this.displayedBooksCount += 10;
     },
     async checkIfLibrarian() {
       try {
-        const response = await axios.get("http://books.localhost:8002/api/method/books_management.api.user_role");
-        if (response.data.role === "Librarian") {
-          this.isLibrarian = true; 
-        }
+        const response = await axios.get(
+          "http://books.localhost:8002/api/method/books_management.api.user_role",{
+      headers: {
+        Authorization: `token 28b908dbf65367b:f4ef14fb1da5c14`,
+      },
+    }
+        );
+        console.log("API Response:", response.data);
+        if (response.data.message.role === "Librarian") {
+          this.isLibrarian = true;
+          console.log("User is a Librarian:", this.isLibrarian);
+
+        }else {
+      console.log("User is not a Librarian:", this.isLibrarian);
+    }
       } catch (error) {
         console.error("Error checking user role:", error);
+        alert("You do not have permission to access this resource.");
+      }
+    },
+    toggleLatestBooksModal() {
+      this.showLatestBooksModal = !this.showLatestBooksModal;
+      if (this.showLatestBooksModal) {
+        this.fetchLatestBooks();
+      }
+    },
+    async fetchLatestBooks() {
+      try {
+        const response = await axios.get(
+          "http://books.localhost:8002/api/resource/Book",
+          {
+            params: {
+              fields: JSON.stringify(["name", "author","image"]),
+              order_by: "creation desc", 
+              limit_page_length: 5, 
+            },
+          }
+        );
+        this.latestBooks = response.data.data;
+      } catch (error) {
+        console.error("Error fetching latest books:", error);
       }
     },
   },
 };
 </script>
-
 
 <style>
 body {
@@ -145,6 +207,10 @@ body {
   font-family: Arial, cursive;
   margin: 0;
   padding: 0;
+}
+.title{
+  text-align: center;
+  font-size: xx-large;
 }
 .container-books{
   margin-right:20%;
@@ -209,7 +275,7 @@ body {
   margin-top: 2px;
   cursor: pointer;
 }
-.modal-overlay {
+.modal-overlayy {
   position: fixed;
   top: 0;
   left: 0;
@@ -267,7 +333,7 @@ body {
   color: #bbb;
 }
 .load-more-btn {
-  background-color: #3f418c;
+  background-color: #1e1e1e;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -277,22 +343,77 @@ body {
 }
 
 .load-more-btn:hover {
-  background-color: #2d4e95;
+  background-color: #4c4646;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.latest-list-ol li{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #121212;
+}
+.latest-list-ol{
+ margin: 0;
+}
+.latest-content{
+  display:inline-block;
+  align-items: center;
+}
+.modal-content {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+.latest-cover-book{
+  width: 100px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
 }
 
+.latest-books-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.latest-btn-direction{
+  text-align: end;
+}
+.latest-books-btn:hover {
+  background-color: #4c4646;
+}
 @media screen and (max-width: 768px) {
   .book-card {
-    flex: 1 1 calc(33.333% - 15px); 
-    max-width: calc(33.333% - 15px);
+    width: 100%;
+    overflow:scroll;
   }
 }
 
 @media screen and (max-width: 480px) {
   .book-card {
-    flex: 1 1 calc(50% - 15px); 
-    max-width: calc(50% - 15px);
+    width: 100%;
+    overflow:scroll;
   }
 }
-
-
 </style>

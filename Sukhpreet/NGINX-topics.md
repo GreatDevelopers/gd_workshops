@@ -61,9 +61,12 @@ Now open on browser to see default welcome page for nginx server by:
 * sudo systemctl reload nginx
 #### Here is the demo of Error pages
 ### 403 Forbidden error
+- [403 File](403.html)
 ![Screenshot from 2024-10-05 01-52-44](https://github.com/user-attachments/assets/79859f90-d529-4039-a289-091eb75c3f3a)
 
 ### 404 Not Found error
+- [404 File](404.html)
+
 ![Screenshot from 2024-10-05 01-49-05](https://github.com/user-attachments/assets/b1c7ac16-aa1d-4dac-8e25-94e1620194ea)
 
 ************************************************

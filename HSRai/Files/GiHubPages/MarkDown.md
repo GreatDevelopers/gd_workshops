@@ -1,8 +1,8 @@
-## Sample of ~~marcdn~~ markdown ~AMC single tidle~
+## Sample of ~~marcdn~~ markdown
 
 [Link to another page](./another-page.html). This link points to no-existance file, so will not work.
 
-[Link to real page | First Encounter to GitHub](taskStatement.md)
+[Link to real page:First Encounter to GitHub](taskStatement.md)
 
 There should be whitespace between paragraphs.
 
@@ -49,30 +49,26 @@ end
 
 * This is an unordered list following a header (`Star/Asterisk<Space>).
 * This is an unordered list following a header.
-*   This is an unordered list following a header.
+* This is an unordered list following a header.
 
 ##### Header 5
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+1. This is an ordered list following a header.
+1. This is an ordered list following a header.
+1. This is an ordered list following a header.
 
 ###### Header 6
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+| Sr. No | head1        | head two          | three |
+|--------|-------------:|:------------------|-------|
+|   1    | ok           | good swedish fish | nice  |
+| 2      | out of stock | good and plenty   | nice  |
+|   3    | ok           | good `oreos`      | hmm   |
+|   4    | ok           | good `zoute` drop | yumm  |
 
 ### There's a horizontal rule below this.
 
-* * *
-
 ***
-
----
 
 Another way:
 
@@ -80,17 +76,17 @@ Another way:
 
 ### Here is an unordered list:
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+* Item foo
+* Item bar
+* Item baz
+* Item zip
 
 ### And an ordered list:
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+1. Red
+1. Green
+1. Blue
+1. Black
 
 ### And a nested list:
 
@@ -114,7 +110,7 @@ Another way:
 
 ### Large image
 
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+![AI](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Kismet-IMG_6007-gradient.jpg/800px-Kismet-IMG_6007-gradient.jpg)
 
 Text can be _italic_, or ~~strikethrough~~.
 

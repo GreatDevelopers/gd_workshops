@@ -1,5 +1,7 @@
 ## Sample of ~~marcdn~~ markdown
 
+[See the sorce code of file at https://github.com/GreatDevelopers/gd_workshops/blob/master/HSRai/Files/GiHubPages/MarkDown.md?plain=1](https://github.com/GreatDevelopers/gd_workshops/blob/master/HSRai/Files/GiHubPages/MarkDown.md?plain=1)
+
 [Link to another page](./another-page.html). This link points to no-existance file, so will not work.
 
 [Link to real page:First Encounter to GitHub](taskStatement.md)
@@ -62,7 +64,7 @@ end
 | Sr. No | head1        | head two          | three |
 |--------|-------------:|:------------------|-------|
 |   1    | ok           | good swedish fish | nice  |
-| 2      | out of stock | good and plenty   | nice  |
+| 2      | out of stock | good and plenty   |         nice       |
 |   3    | ok           | good `oreos`      | hmm   |
 |   4    | ok           | good `zoute` drop | yumm  |
 
